@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar [color]="isAndroid ? 'danger' : 'secondary'">
+    <ion-title class="t-title">Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <p align='center'><img src="assets/imgs/icon1.png"></p>
+  <div class="t-title">TRACEBILITY DIGITAL FARM</div>
+  <ion-item>
+    <ion-label stacked>Username:</ion-label>
+    <ion-input type="username" [(ngModel)]="username"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Password:</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <p><button ion-button color="secondary" block (click)="signIn(username, password)">Sign In</button></p>
+  <!-- <button ion-button color="secondary" block (click)="doAlert()">Sign In</button> -->
+</ion-content>

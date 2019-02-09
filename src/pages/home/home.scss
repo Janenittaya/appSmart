@@ -1,0 +1,41 @@
+page-home {
+
+}
+.t-title{
+    text-align: center;
+    font-size:1.2em;
+    color: green;
+}
+
+.vat-amount{
+    text-align: center;
+    font-size: 4em;
+}
+
+.card-background-page {
+    ion-card {
+      position: relative;
+      text-align: center;
+      background-color: rgba(184, 241, 186, 0.747);
+    }
+  
+    .card-title {
+      position: absolute;
+      top: 80%;
+      font-size: 1.3em;
+      width: 100%;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+    }
+    .icons-basic-page {
+      ion-icon {
+        font-size: 90px;
+      }
+      ion-col {
+        flex: 0 0 25%;
+        max-width: 25%;
+        text-align: left;
+        padding: 10px 5px;
+      }
+    }
+  }

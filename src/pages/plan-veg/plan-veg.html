@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar [color]="isAndroid ? 'danger' : 'secondary'">
+    <ion-title  class="t-title">สร้างแผน</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h3>สร้างแผนก่อนการปลูก</h3>
+  <ion-list radio-group [(ngModel)]="textplan">
+      <ion-list-header>
+          <h2>สร้างแผนก่อนการปฏิบัติ การปลูกผัก</h2>
+      </ion-list-header>
+    
+      <ion-item>
+        <ion-label>การปลูกและเตรียมดิน</ion-label>
+        <ion-radio checked="true" value="การปลูกและเตรียมดิน"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>การหว่านปุ๋ย</ion-label>
+        <ion-radio value="การใส่ปุ๋ย"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>การใส่สารและยาฆ่าแมลง</ion-label>
+        <ion-radio value="การใส่สารและยาฆ่าแมลง" ></ion-radio>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>การเก็บเกี่ยว</ion-label>
+          <ion-radio value="การเก็บเกี่ยว" ></ion-radio>
+      </ion-item>
+    </ion-list>
+  <ion-card>
+    <ion-item>
+        <ion-label stacked> <h2>ชื่อแผน:</h2> </ion-label>
+        <ion-input type="text" [(ngModel)]="textplan"></ion-input>
+    </ion-item>
+  </ion-card>
+  
+<ion-card> 
+   
+    <ion-item>
+      <ion-label stacked><h2>รายละเอียดแผน:</h2></ion-label>
+      <ion-textarea name="text-detail" rows="10" cols= "20" [(ngModel)]="textdetail"></ion-textarea>
+    </ion-item>
+</ion-card>
+
+<ion-card>
+    <ion-item>
+        <ion-label stacked><h2>วันที่วางแผนปฏิบัติ (ปี/เดือน/วัน):</h2></ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+  </ion-card>
+
+<p><button ion-button color="secondary" block (click)="savePlan(textplan, textdetail, myDate)">บันทึกแผน</button></p>
+<p><ion-card-header>
+  ข้อมูลแสดงการบันทึกการปลูกผัก
+</ion-card-header></p>
+
+<ion-card *ngFor="let newsInfo of news"> 
+  <ion-card-content>
+    <ion-card-title>
+    <h2>กิจกรรม{{ newsInfo.name}}</h2><br>
+    <h3>วันที่ : {{ newsInfo.date_active }}</h3><br>
+    <h3>รายละเอียดกิจกรรม : {{ newsInfo.description }}</h3>
+  </ion-card-title>
+</ion-card-content>
+</ion-card>
+
+</ion-content> 

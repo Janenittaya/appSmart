@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar [color]="isAndroid ? 'danger' : 'secondary'">
+    <ion-title class="t-title">ข้อมูลแปลงปลูกย่อย</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let corpInfo of corp" (click)="viewCorp(corpInfo)">
+    <img src="https://farm.digitalsmartfarm.com/{{ corpInfo.image }}">
+    <ion-card-header>
+      <h2>ข้อมูลแปลงย่อย : {{ corpInfo.name }}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>วันเริ่มปลูก : {{ corpInfo.start_date }}</ion-label>
+      <ion-label>ชนิด : {{corpInfo.type_description}}</ion-label>
+      <ion-label>หมายเหตุ : {{ corpInfo.type_description}}</ion-label>
+      <ion-label>อัพเดทล่าสุด: {{corpInfo.updated_at}}</ion-label>
+      <ion-label>เริ่มปลูก: {{ corpInfo.start_date}}</ion-label>
+      <ion-label> คาดว่าจะเก็บเกี่ยว : {{corpInfo.expected_date}}</ion-label>
+      <ion-label>สถานะ : {{ corpInfo.status }}</ion-label>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

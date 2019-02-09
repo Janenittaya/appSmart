@@ -1,0 +1,25 @@
+page-login {
+    .button-md {
+        margin-top: 2rem;
+    }
+}
+
+.forgot-password{
+    text-align: right;
+    font-size:1em;
+}
+
+.t-title{
+    text-align: center;
+    font-size: 1.2em;
+    color: green;
+}
+.tab-button {
+    &[aria-selected="false"] {
+      color: #8c8c8c !important;
+    }
+
+    &[aria-selected="true"] {
+      color: #047c3a !important;
+    }
+  }

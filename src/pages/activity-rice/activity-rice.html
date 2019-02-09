@@ -1,0 +1,47 @@
+
+<ion-header>
+
+    <ion-navbar  [color]="isAndroid ? 'danger' : 'secondary'">
+      <ion-title  class="t-title">บันทึกการหว่านข้าว</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <h2 class="text-body">การบันทึกกิจกรรม </h2>
+    <ion-card>
+    <ion-item>
+        <ion-label stacked>การหว่านเมล็ดข้าว(รายละเอียดกิจกรรม):</ion-label>
+        <ion-textarea name="text-detail" rows="5" cols= "10" [(ngModel)]="textdetail1"></ion-textarea>
+      </ion-item>
+    </ion-card>
+  
+  <ion-card> 
+      <ion-item>
+        <ion-label stacked>คำอธิบายเพิ่มเติม(ถ้ามี):</ion-label>
+        <ion-textarea name="text-detail" rows="5" cols= "10" [(ngModel)]="textdetail2"></ion-textarea>
+      </ion-item>
+  </ion-card>
+  <p><button ion-button color="secondary" block (click)="saveActivityRice(textdetail1, textdetail2)">บันทึกกิจกรรม</button></p>
+  <!-- <button ion-button color="secondary" block onclick='location.replace("https://traceability.digitalsmartfarm.com/trace_famer_farm.php")'>  บันทึกข้อมูลการหวานปุ๋ย</button> -->
+  <p><ion-card-header>
+      ข้อมูลแสดงการบันทึกการหว่านข้าว
+  </ion-card-header></p>
+  
+  <ion-card *ngFor="let newsInfo of news"> 
+      <ion-card-content>
+        <ion-card-title>
+        <h2>กิจกรรม{{ newsInfo.lot_no}}</h2><br>
+        <h3>วันที่ : {{ newsInfo.lot_date_act }}</h3><br>
+        <h3>รายละเอียดกิจกรรม : {{ newsInfo.lot_detail }}</h3><br>
+        <h3>คำอธิบายเพิ่มเติม : {{ newsInfo.lot_note}}</h3>
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+  
+  <!-- <ion-fab right bottom>
+      <button ion-fab color="light"><ion-icon name="add" (click)="insertAct(corpInfo)"></ion-icon></button>
+    </ion-fab> -->
+  </ion-content>
+  

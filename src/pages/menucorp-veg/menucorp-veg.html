@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar [color]="isAndroid ? 'danger' : 'secondary'">
+    <ion-title class="t-title">จัดการแปลงผัก</ion-title>
+  </ion-navbar>
+
+</ion-header> 
+
+
+<ion-content class="grid-basic-page">
+    <ion-card (click)="viewPlan(corpInfo)">
+        <ion-card-content class="body">
+             บันทึกแผนก่อนการปฏิบัติ
+        </ion-card-content>
+      </ion-card>
+      <ion-card *ngFor="let v of menuV" (click)="viewMenu(v)">
+          <ion-card-content class="body">
+              {{v.name}}
+          </ion-card-content>
+        </ion-card>
+</ion-content>
+

@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar [color]="isAndroid ? 'danger' : 'secondary'">
+    <ion-title>ข้อมูลตรวจสอบย้อนกลับ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+<div *ngFor="let s of serch">
+    <img src="https://farm.digitalsmartfarm.com/{{ s?.image }}"> <br>
+      <h2>เกษตรกร : {{ s?.name }}</h2>
+      <p>ฟาร์ม : {{ s?.fd_name }}</p>
+      <p>ที่ตั้ง : {{ s?.fd_address }} {{ s?.fd_amphoe }} {{ s?.fd_distric }} <br>
+               {{ s?.fd_province }} {{ s?.zipcode }} 
+        <br>โทรศัพท์ : {{ s?.fd_phone }}</p>
+      </div>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+        <div *ngFor="let s of serch">
+        <h3>ข้อมูลตรวจสอบย้อนกลับแปลง :{{ s?.code_veg }}</h3>
+      <h3>ชื่อแปลง : {{ s?.crop_name }}</h3>
+      <h3>ประเภทแปลงปลูก : {{ s?.type_description }}</h3>
+    </div>
+    </ion-item>
+  </ion-card>
+
+    <ion-card *ngFor="let newsInfo of news" (click)="viewDetail(newsInfo)" no-lines>
+      <ion-item class="page-tracebility">
+        <h2>กิจกรรม{{ newsInfo.lot_no}}</h2><br>
+        <h2>{{ newsInfo.name}}</h2>
+        <h3>วันที่ : {{ newsInfo.lot_date_act }}</h3>
+        <h3>รายละเอียดกิจกรรม : {{ newsInfo.lot_detail }}</h3>
+        <h3>คำอธิบายเพิ่มเติม : {{ newsInfo.lot_note}}</h3>
+      </ion-item>
+      </ion-card>
+          <!-- <ion-card >
+              <ion-card-header>
+              สถานที่จัดจำหน่าย
+              </ion-card-header>
+              <ion-item class="page-tracebility2" *ngFor="let newsInfo of news" (click)="viewDetail(newsInfo)">
+                  <h3>{{ newsInfo.store_name }}</h3>
+                </ion-item>
+            </ion-card> -->
+</ion-content>

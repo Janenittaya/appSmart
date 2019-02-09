@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar [color]="isAndroid ? 'danger' : 'secondary'">
+    <ion-title class="t-title">ข้อมูลฟาร์ม</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="https://farm.digitalsmartfarm.com/{{ memPic }}">
+      </ion-avatar>
+      <h2>ข้อมูลฟาร์มคุณ{{ memName}}</h2>
+    </ion-item>
+  </ion-card>
+
+  <button style="color: #909090;background-color: #ffffff" ion-item detail-none block menuClose (click)="logout()">
+    <img src='assets/imgs/logout.png' alt="" width="25px" height="25px">
+    <span>
+      <span style="margin-left: 15px">ออกจากระบบ</span>
+    </span>
+  </button>
+  <ion-list>
+    <ion-item *ngFor="let newsInfo of news" (click)="viewDetail(newsInfo)" no-lines>
+      <ion-card>
+        <img src="https://farm.digitalsmartfarm.com/{{ newsInfo.picture }}">
+        <ion-card-content>
+          <ion-card-title>
+            {{ newsInfo.name }}
+            <p>{{ newsInfo.address }} {{ newsInfo.amphoe }}<br >{{ newsInfo.district }}
+              {{ newsInfo.province }} {{ newsInfo.zipcode }}
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

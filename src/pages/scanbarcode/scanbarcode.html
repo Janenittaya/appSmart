@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar [color]="isAndroid ? 'danger' : 'secondary'">
+    <ion-title>
+      SCAN QR CODE
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button color="primary" block round (click)="onScan()">QR Code Scan</button>
+  <ion-item>
+    Text: {{qrcode_result}}
+  </ion-item>
+  <ion-item>
+    Format: {{qrcode_format}}
+  </ion-item>
+</ion-content>

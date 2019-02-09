@@ -1,0 +1,60 @@
+
+  <ion-header>
+      <ion-navbar [color]="isAndroid ? 'danger' : 'secondary'">
+        <ion-title class="t-title">ระบบตรวจสอบย้อนกลับ</ion-title>
+      </ion-navbar>
+    </ion-header>
+
+    <!-- <ion-content padding>
+  <div text-center *ngIf="!ShowPin">
+     <button ion-button clear large (click)="showPin()">Enter Pin</button>
+     <br>
+     <label *ngIf="Pin">Pin entered is {{Pin}}</label>
+  </div>
+ 
+<custom-pin *ngIf="ShowPin" pagetitle="Enter The Pin" (change)="eventCapture($event)"></custom-pin>
+</ion-content> -->
+
+    <ion-content padding>
+        <p align='center'><img src="assets/imgs/icon1.png"></p>   
+        <div class="t-title">TRACEBILITY DIGITAL FARM</div><p>
+
+  <ion-grid>
+      <ion-row>
+        <ion-col>
+            <ion-card (click)="onScan()">
+                <img src="assets/imgs/qrcode.svg" width="100" height="100">
+              </ion-card>
+              <div align='center'>SCAN QR CODE</div>
+        </ion-col>
+        <ion-col>
+            <ion-card  (click)="viewSearch(newsInfo)">
+                <img src="assets/imgs/search.svg" width="100" height="100">
+              </ion-card>
+              <div align='center'>SEARCH BY CODE</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <ion-card (click)="connect()">
+                  <img src="assets/imgs/contact.svg"  width="100" height="100">
+                </ion-card>
+                <div align='center'>CONTACT</div>
+          </ion-col>
+          <ion-col>
+            <ion-card (click)="manual()">
+                <img src="https://image.flaticon.com/icons/svg/1028/1028907.svg"  width="100" height="100">
+              </ion-card>
+              <div align='center'>MANULA</div>
+        </ion-col>
+        </ion-row>
+    </ion-grid></p>
+</ion-content>
+
+ <!-- <ion-footer class="icons-basic-page">
+  <ion-toolbar  (click)="viewDetail(newsInfo)" no-lines>
+    <ion-title>
+      <ion-col><ion-icon name="person"></ion-icon></ion-col>FARMER LOGIN
+    </ion-title>
+  </ion-toolbar>
+</ion-footer> -->

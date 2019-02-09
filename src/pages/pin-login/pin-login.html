@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar [color]="isAndroid ? 'danger' : 'secondary'">
+    <ion-title>
+     Lock Screen
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding>
+<button ion-button full icon-left (click)="openLockscreen()">
+    <ion-icon name="lock"></ion-icon>
+  ใส่รหัสผ่าน</button>
+ 
+  <button ion-button full icon-left (click)="setupCode()">
+    <ion-icon name="settings"></ion-icon>
+  ตั้งค่ารหัสผ่าน</button>
+ 
+</ion-content>

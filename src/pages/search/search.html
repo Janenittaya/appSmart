@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar [color]="isAndroid ? 'danger' : 'secondary'">
+    <ion-title>Search</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="card-background-page">
+  <p align='center'><img src="assets/imgs/icon1.png"></p>   
+  <div class="t-title">TRACEBILITY DIGITAL FARM</div>
+  <ion-card>
+  <!-- <div class="card-title">SEARCH BY CODE</div> -->
+
+  <ion-searchbar type="keyword" [(ngModel)]="keyword"></ion-searchbar>
+  
+  </ion-card>
+
+  <div padding>
+    <button ion-button color="secondary" block (click)="search(keyword)">SEARCH</button>
+    <!-- <button ion-button color="secondary" block (click)="doAlert()">SEARCH</button> -->
+  </div>
+
+</ion-content> 

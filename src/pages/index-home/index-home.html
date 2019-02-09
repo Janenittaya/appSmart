@@ -1,0 +1,64 @@
+<ion-content padding>
+  <p align='center'><img src="assets/imgs/icon1.png"></p>
+  <div class="t-title">TRACEBILITY DIGITAL FARM</div>
+  <p>
+    <!-- <ion-card (click)="onScan()">
+      <img src="assets/imgs/icon2.png"  width="50" height="100">
+      <div class="card-title">SCAN QR CODE</div>
+    </ion-card>
+    <ion-card  (click)="viewSearch(newsInfo)" no-lines>
+      <img src="assets/imgs/icon3.png"  width="50" height="100">
+      <div class="card-title">SEARCH BY CODE</div>
+    </ion-card>
+    <p><button ion-button color="light" block (click)="onScan()">  <ion-icon ios="ios-barcode" md="md-barcode"></ion-icon>SCAN QR CODE</button></p>
+    <p><button ion-button color="light" block (click)="viewSearch(newsInfo)">SEARCH BY CODE</button></p>
+        <p><button ion-button color="light" block (click)="connect()">CONNECT</button></p>
+         -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card (click)="onScan()">
+            <img src="assets/imgs/qrcode.svg" width="100" height="100">
+          </ion-card>
+          <div align='center'>SCAN QR CODE</div>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="viewSearch(newsInfo)">
+            <img src="assets/imgs/search.svg" width="100" height="100">
+          </ion-card>
+          <div align='center'>SEARCH BY CODE</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card (click)="connect()">
+            <img src="assets/imgs/contact.svg" width="100" height="100">
+          </ion-card>
+          <div align='center'>CONTACT</div>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="viewDetail()">
+            <img src="assets/imgs/login.svg" width="100" height="100">
+          </ion-card>
+          <div align='center'>FARMER LOGIN</div>
+        </ion-col>
+
+        <ion-col>
+          <ion-card (click)="manual()">
+            <img src="https://image.flaticon.com/icons/svg/1028/1028907.svg" width="100" height="100">
+          </ion-card>
+          <div align='center'>MANULA</div>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+</ion-content>
+<!--   
+   <ion-footer class="icons-basic-page" >
+    <ion-toolbar [color]="isAndroid ? 'danger' : 'secondary'"  (click)="viewDetail()" no-lines>
+      <ion-title>
+        <ion-col><ion-icon name="person"></ion-icon></ion-col>FARMER LOGIN
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer> -->
